@@ -13,11 +13,3 @@ def post_new_order(order_body):
 def get_order_by_track(track):
     params = {"t": track}
     return requests.get(configuration.URL_SERVICE + configuration.GET_ORDER_BY_TRACK, params=params)
-
-
-# Проверка, что код ответа - 200
-def test_get_order_by_track():
-    track = get_order_by_track_test.save_order_track()
-    response = get_order_by_track(track)
-    assert response.status_code == 200
-    
